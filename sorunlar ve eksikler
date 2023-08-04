@@ -1,0 +1,26 @@
+Sorunlar:
+
+1)Yayınlaya basmadan sayfa her yenilediğinde son yazılanı sürekli veritabanına ekliyor.*
+addtext.php satır: 58
+
+
+3)
+
+Eksikler:
+
+1)Profilim Sayfası ekle
+
+2)veritabanına kullanıcı sütunu ve diğer eklenebilecek sutünları ekle*
+
+3)Kayıt Ol Sayfası ekle, Giriş yapı bitir
+
+4)Admin paneldeki işlem sütunundaki tuşlara fonksiyon ekle
+
+5)Navbarı düzenle
+
+6)admin panelde üstteki linklere ne yapacağını karar ver
+
+7)Giriş sayfasındaki Kayıt ol tuşununun yerini düzelt
+
+8)Hakkımızda'ya bişeyler salla
+
