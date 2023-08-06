@@ -7,7 +7,7 @@
 
 $link = @$_GET["link"]; // ?link= burayı çek
 
-$data = $db -> prepare("SELECT * FROM yazilar WHERE text_link=? ");
+$data = $db -> prepare("SELECT * FROM yazilar WHERE text_link=?");
 $data -> execute([
     $link
 ]);
