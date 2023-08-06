@@ -1,0 +1,105 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Anamakine: 127.0.0.1
+-- Üretim Zamanı: 06 Ağu 2023, 19:51:22
+-- Sunucu sürümü: 10.4.25-MariaDB
+-- PHP Sürümü: 8.1.10
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Veritabanı: `blogsite`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `uyeler`
+--
+
+CREATE TABLE `uyeler` (
+  `ID` int(11) NOT NULL,
+  `AdSoyad` varchar(255) COLLATE utf8mb4_turkish_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_turkish_ci NOT NULL,
+  `sifre` varchar(255) COLLATE utf8mb4_turkish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_turkish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `yazilar`
+--
+
+CREATE TABLE `yazilar` (
+  `text_id` int(11) NOT NULL,
+  `text_baslik` text COLLATE utf8_turkish_ci NOT NULL,
+  `text_link` text COLLATE utf8_turkish_ci NOT NULL,
+  `text_aciklama` text COLLATE utf8_turkish_ci NOT NULL,
+  `text_resim` text COLLATE utf8_turkish_ci NOT NULL,
+  `text_tarih` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `yazar_id` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Tablo döküm verisi `yazilar`
+--
+
+INSERT INTO `yazilar` (`text_id`, `text_baslik`, `text_link`, `text_aciklama`, `text_resim`, `text_tarih`, `yazar_id`) VALUES
+(1, 'İHU Staj', 'ihu-staj', 'Hello World, Merhaba Dünya, Assalamun Alaikum Dunia', '', '2023-08-03 10:44:15', 0),
+(2, 'İHU Staj2', 'ihu-staj2', 'dskjfasjdfksdfakjsdhfkjdsajkdfhasdkjfhsahsj', '', '2023-08-03 10:44:28', 0),
+(8, '4 Ağustos 2023 Cuma günü falan fişman cart curt', 'assets/carddeneme.jpg', 'sdfdasfadsgfbnghhgfjıyujtgrfsdgdjkrytresdfhsytaers', '4-agustos-2023-cuma-gunu-falan-fisman-cart-curt', '2023-08-04 05:49:49', 0),
+(12, 'Başlık3', 'baslik3', 'Açıklama/Yazı3', 'Resim Link3', '2023-08-04 06:53:10', 0),
+(20, 'En son deneme', 'en-son-deneme', 'Deneme Filan SFDSLKFLSDKFLKJSALKDFJlksfjalksjdlksf', 'https://blogger.googleusercontent.com/img/a/AVvXsEhMtAkNsc0TKflBehEW-PAS4AZtD1l5jN6mQhE72hp5aiKrpTna2BW-RzpM1uX0cU6SADAeCzZUCiERRMD4-a2mHvwGlX2Brqabx2DTY6ZR8I-J_jRICD1lFE1syQGHyPm1M8KK_Ih3fTIchIz5H3usRVrsh93Ndzeg-0N3_dRqhKkPfEqPYKWP9sVSJw=w1600', '2023-08-04 07:44:57', 0),
+(21, 'En son denemeden sonraki deneme', 'en-son-denemeden-sonraki-deneme', 'Lorem ipsum dolor sit amed consectetur adipicing elit Lorem ipsum dolor sit amed consectetur adipicing elit Lorem ipsum dolor sit amed consectetur adipicing elit Lorem ipsum dolor sit amed consectetur adipicing elit Lorem ipsum dolor sit amed consectetur adipicing elit Lorem ipsum dolor sit amed consectetur adipicing elit Lorem ipsum dolor sit amed consectetur adipicing elit Lorem ipsum dolor sit amed consectetur adipicing elit Lorem ipsum dolor sit amed consectetur adipicing elit Lorem ipsum dolor sit amed consectetur adipicing elit Lorem ipsum dolor sit amed consectetur adipicing elit', 'assets/carddeneme.jpg', '2023-08-04 08:23:44', 0),
+(23, 'Rnadom', 'rnadom', 'Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random ', 'https://res.cloudinary.com/tasit-com/image/upload/c_scale,w_756,h_434,dpr_2/f_webp,q_auto/v1665653440/400.000-tl-alti-2.-el-araba-clio.jpeg?_i=AA', '2023-08-04 15:59:49', 0),
+(24, 'Rnadom', 'rnadom', 'Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random ', 'https://res.cloudinary.com/tasit-com/image/upload/c_scale,w_756,h_434,dpr_2/f_webp,q_auto/v1665653440/400.000-tl-alti-2.-el-araba-clio.jpeg?_i=AA', '2023-08-04 16:00:00', 0),
+(25, 'Rnadom', 'rnadom', 'Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random ', 'https://res.cloudinary.com/tasit-com/image/upload/c_scale,w_756,h_434,dpr_2/f_webp,q_auto/v1665653440/400.000-tl-alti-2.-el-araba-clio.jpeg?_i=AA', '2023-08-04 16:00:02', 0),
+(26, 'Rnadom', 'rnadom', 'Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random Random ', 'https://res.cloudinary.com/tasit-com/image/upload/c_scale,w_756,h_434,dpr_2/f_webp,q_auto/v1665653440/400.000-tl-alti-2.-el-araba-clio.jpeg?_i=AA', '2023-08-04 16:00:04', 0),
+(39, 'asdasddsgfasdfdasf', 'asdasddsgfasdfdasf', 'dsfasdfasdfasdfsdfdsfgfdhşlfjdklshfdklısjhfkldashfj', 'https://cdn.yenicaggazetesi.com.tr/news/775277.jpg', '2023-08-04 16:10:49', 0);
+
+--
+-- Dökümü yapılmış tablolar için indeksler
+--
+
+--
+-- Tablo için indeksler `uyeler`
+--
+ALTER TABLE `uyeler`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Tablo için indeksler `yazilar`
+--
+ALTER TABLE `yazilar`
+  ADD PRIMARY KEY (`text_id`);
+
+--
+-- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
+--
+
+--
+-- Tablo için AUTO_INCREMENT değeri `uyeler`
+--
+ALTER TABLE `uyeler`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `yazilar`
+--
+ALTER TABLE `yazilar`
+  MODIFY `text_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
